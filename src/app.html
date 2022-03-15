@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Svelte demo app" />
+		<link rel="icon" href="%svelte.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>jon of the americas</title>
+		<!--“I am no longer accepting the things I cannot change. I am changing the things I cannot accept.” 
+		― Angela Y. Davis-->
+			<!-- 
+																																																											 
+																																																											 
+																																																											 
+																																																											 
+																																																											 
+																																																  .:-                                        
+																											   :+-                                                                                                                           
+																											 =: -:                                                  ..           .                                                           
+								......                   .                                           .     .*+=-                                       -+**-     -==-=+==:=.   :+-=.   .+=*-    .=.   -:+=-     :+:.                         
+						   .:.        -+.    ..:+***===:=++::+-                                    -+==*=..+: :::==:-.                               .*:-==+=:=:.-:  .-    :+==**-    .:.  =+==:.==-   .+:..---  -=--=+==-                   
+									   :*=:-. -=---.           .--:--.                              ---.  :+  -=                                                                 ...                                                         
+								   -==. :+     .                                                          +-  :.                                                                                                                             
+								 -=.    :+                                                               :+:=-                                                                                                                               
+								 -=-..-:-                                                                                                                                                                                                    
+																																																											 
+																																																											 
+													 .:+*****************+:-                                                                                                                                                                 
+												   :**************++++****+++*+:                                                                                                                                                             
+												-+*********+**++++++=======:::=++=.                                                                                                                                                          
+											 .=++*********++++++==:::::-::-.-----::-                                                                                                                                                         
+										   .:::=++***+++++====::::---....-------:::::                                                                                                                                                        
+										  .-.::-:=+++=::::----..........-:==::::=====:                                                                                                                                                       
+										  -:-....-----.......   ...---.---::::==+++++:                                                                                                                                                       
+										  -=-.............. .............--:---:=+++=:                                                                                                                                                       
+										  .==:--....-::-........---:::::=++++*+=:-..---.                                                                                                                                                     
+											 .-:-...... .-=+*******++-.......---.-......                                                                                                                                                     
+											-:++*****+:..-+*******++:........--........                                                                                                                                                      
+										  :+*********+=-...=******++:. .............-.                                                                                                                                                       
+											 :+*******+-.......-....  .........----:=:-..                                                                                                                                                    
+											   -=++=:-......... ..   .........------:=+++++++=-                                                                                                                                              
+													--.......................---....-=====++++====::-                                                                                                                                        
+													  --..-::-----..........--......:============++++++=.                                                                                                                                    
+													   .--..---..........---.......-:==============+++++++=-                                                                                                                                 
+														:+==:-........---..........:=============+==++++++++++:.                                                                                                                             
+													  -====+=========:-..........-===============++++++++++++++++-                                                                                                                           
+													 :=+===============-........:==============+++++++++++++++++++-                                                                                                                          
+													 .=+==+===========+=-.....:===========+++++++++++++++++++++++++:.                                                                                                                        
+													  -++++==============-..:===+=========++++++++++++++++++++++++++*++:                                                                                                                     
+													   -++++++================+===========++++++++++++++=++++++++++++++=++-                                                                                                                  
+													   .=++++++++==============++========++++++++=+++++++++++++++++++++++++++:.                                                                                                              
+													   :+==+++++++++==========++++==++++++++++++++=++++===++++++++++++++++++++++=.                                                                                                           
+													   :+=+++++++++++++========++=+++++++++++++++++++++===+++++++++++++++++++++++++-                                                                                                         
+													  .++==+++++++++++++++============::=++++++++++++=====++++++++++++++++++++++++++=.      ..                                                                                               
+													  -+====++++++++++++++++======::====+++++++=++++=======+++++++++++++++++++++++++++:       --                                                                                             
+													  .======+++===+++++++++===::::::==:::=+++++=+=+========++++++++++++++++++++++++++++-     --                                                                                             
+														 .--:===========:::=**===:::::::::==:=++=============+++++++++++++++++++++++++++=::-  -.                                                                                             
+															  .............:******+=:=====::::::--.......---:++++++++++++===::::::::------------::::-                                                                                        
+															  .-...........-+*******++=+=::=++=:-........--:=*+++++++=:::::--............-------......--                                                                                     
+															   .............-+++++++***+++++++=-........--::+++++++:----......-::=++++++=+++++++++=--...--.                                                                                  
+																.............-=++=+******+++=:-........---:+*===+=----... .=+++++++++::====++++++++=-....--.                                                                                 
+																::............-+*++**++**++=-.........---:+*+===:----..  -++====:---------::=+===+=:-....----                                                                                
+															   .+*+:...........:++++*+=**+:-.........---=*+====----..   .---::::-.......................----.                                                                                
+															   -++++=--........-=***++==:-..........--:++====:----..       ..............................--                                    .                                             
+															   .++++++:-........-=*+===--.........--:++=====:----..        ..............................--                               .-+******+.                                        
+																=++=++=:-.......-:+=:--.........--:++=======--:-...       ..............................-----                          =***********=                                         
+																-=+=:--....--....-:--.........--=++========:--:-...    ..................................-------                      .+*******++=.                                          
+																=+++++++=----------.........-:=++=======+++:-::-..        ..............................--------.                            ...  .=.                                        
+															   .::--.--......-............-:++============+=:::-..          ............................-------.                          ..==+=--:.                                         
+														   .---.........................-=+++===++==+========::--..       ..............................------:.                       .=+=+==--                                             
+														 ...--.....   ...--.----.....-=+***+++++=====++++++++=::--. .    ...........................-.---------            .  ...-::==+==:.                                                  
+													   .....               ....---:=+****+=+:...--.....        .--.... ...........................--:--------:::::=:==:--:=:====:=::-..                                                      
+														.                    ....-:=+++*+:-.....                  .-..........................---------..                                                                                    
+														 ....                  ...-=++*+:.......                      ................                                                                                                       
+													   ....-.                 .....=++=-.....                                                                                                                                                
+														 ....              ......-=+=-...                                                                                                                                                    
+														 ..           .-........ .-.                                                                                                                                                         
+														 .. ..        .....                                                                                                                                                                  
+															....--.....                                                                                                                                                                      
+																																																											 
+																						 -:                   .:   .. .                                     .*=                                                                              
+																												  =+                                       =#-              --                                                               
+														   .+*+++=.         ..              --.                  =+..--.                                  ++          .:+=-                                                                  
+															:*-         -*+. =*.    ==   -#=          ++    :**=*+.        :*.  .+-       .==-=*:       -*+        -*+.                                                                      
+															  .:+=.    .*=:=:.   .++.    :#.        .++        =*.         =#+*+-        :*+..*-        =*-       .:*+.                                                                      
+														   .:==:.     .++   --><!--                                   --                                               .-.                                                                          
+																	  =#.          my past does not define me, and you will not control me      
+																	  
+																	  you can contact me at x@jonoftheamericas.com , --><!-- 
+																	  "the wisdom to know the difference, in the words of the son of g--, forgive them for they know not what they do, I yield my sword of light and know that no weapon shall prosper against me, I send love to my enemies and I hope that they prosper, you can not hurt me, I can only be healed" - DESTINY aka Princess Nokia
+																																																											 
+																																																											 
+																  -->   
+																  
+																  <!-- 
+		
+																	Oh, make me over
+		I'm all I wanna be
+		A walking fire
+		You can't get rid of me - Courtney Love and Doja Cat
+																  -->
+																  <!--                                                  .                                                                                                                     
+						"Look, if you had one shot, or one opportunity
+		To seize everything you ever wanted, in one moment
+		Would you capture it, or just let it slip?
+		
+		Yo! His palms are sweaty, knees weak, arms are heavy
+		There's vomit on his sweater already" - some old white guy from "detroit" who once gave a reporter his grammy awards wrapped in his daughters blanked, he also survived the opiate epidemic                                                                                                                                                                                                                
+																  --><!-- 
+		
+		"Now I see that I'm just way too much
+		You got your hands full, I'm misunderstood
+		Now I see that I'm who I can trust
+		And you got a lot of room, you tryna make good
+		
+		But if you think I've been foolish and you only fool me once
+		I guess it's shame on you
+		Say now if you think I've been foolish and you keep on tryna do it, baby
+		I'm 'a switch the plans on you
+		
+		'Cause you're driving me crazy
+		You must think I'm crazy
+		Você me põe tão louca
+		Você pensa que eu sou louca
+		And I won't let you drive me cray-ay-ay-ay-zy
+		And I won't let you drive me crazy
+		Você não vai me por tão lo-o-o-ouca
+		Você não vai me por tão louca
+		
+		I bent my knees for you like a prayer
+		My God. Look at me now
+		Peel off my weakness layer after layer
+		Nothing left for me to keep 'round
+		
+		I'm a force and I'm untamed, babe
+		Can't go through this and stay the same, babe
+		I've seen a lot of stranger things, babe
+		And I'll never look at you the same",
+		
+		"American life 
+		I live the American dream 
+		You are the best thing I've seen, 
+		You are not just a dream
+		
+		I tried to be a boy,
+		I tried to be a girl 
+		I tried to be a mess,
+		I tried to be the best 
+		I tried to find a friend, 
+		I tried to stay ahead 
+		I tried to stay on top...
+		
+		Fuck it... 
+		Do I have to change my name? 
+		Will it get me far? 
+		Should I lose some weight? 
+		Am I gonna be a star?"...
+		
+		"I'd like to express my extreme point of view 
+		I'm not Christian and I'm not a Jew 
+		I'm just living out the American dream 
+		And I just realized that nothing is what it seems ",
+		
+		"I'm so stupid
+		'Cause I used to live
+		In a fuzzy dream
+		And I used to believe
+		In the pretty pictures
+		That were all around me
+		But now I know for sure
+		That I was stupid
+		
+		Please don't try to tempt me
+		It was just greed
+		And it won't protect me
+		Don't want my dreams
+		Adding up to nothing
+		I was just looking for
+		Everybody's looking for something"
+		
+		"You only see what your eyes want to see
+		How can life be what you want it to be
+		You're frozen
+		When your heart's not open
+		
+		You're so consumed with how much you get
+		You waste your time with hate and regret
+		You're broken
+		When your heart's not open"
+		
+		
+		"Life is a mystery everyone must stand alone
+		I hear you call my name
+		And it feels like home
+		
+		When you call my name it's like a little prayer
+		I'm down on my knees, I wanna take you there
+		In the midnight hour
+		I can feel your power
+		Just like a prayer
+		You know I'll take you there"
+		
+		- the real Madonna, from "detroit" to the world-->
+		
+		<!--"Ideas improve. The meaning of words participates in the improvement. Plagiarism is necessary. Progress implies it. It embraces an author's phrase, makes use of his expressions, erases a false idea, and replaces it with the right idea. " ― Guy Debord-->
+		<!-- 
+		
+		“I want a dyke for president. I want a person with AIDS for president and I want a fag for vice president and I want someone with no health insurance and I want someone who grew up in a place where the earth is so saturated with toxic waste that they didn’t have a choice about getting leukemia. I want a president that had an abortion at sixteen and I want a candidate who isn’t the lesser of two evils and I want a president who lost their last lover to AIDS, who still sees that in their eyes every time they lay down to rest, who held their lover in their arms and knew they were dying. I want a president with no air-conditioning, a president who has stood in line at the clinic, at the DMV, at the welfare office, and has been unemployed and laid off and sexually harassed and gaybashed and deported. I want someone who has spent the night in the tombs and had a cross burned on their lawn and survived rape. I want someone who has been in love and been hurt, who respects sex, who has made mistakes and learned from them. I want a Black woman for president. I want someone with bad teeth and an attitude, someone who has eaten that nasty hospital food, someone who crossdresses and has done drugs and been in therapy. I want someone who has committed civil disobedience. And I want to know why this isn’t possible. I want to know why we started learning somewhere down the line that a president is always a clown. Always a john and never a hooker. Always a boss and never a worker. Always a liar, always a thief, and never caught.”
+		― Zoe Leonard, mais, I hear Mykki Blanco
+		-->
+		
+		<!--“If I can't dance to it, it's not my revolution.” 
+		― Emma Goldman -->
+		   <!-- When one begins to live by habit and by quotation, one has begun to stop living. - James Baldwin, and heres an old thing I made with his genius words, https://jonwerber.github.io/baldwin-gf/ --> 
+
+		%svelte.head%
+	</head>
+	<body>
+		<div>%svelte.body%</div>
+	</body>
+</html>
